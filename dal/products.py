@@ -78,7 +78,7 @@ class ProductsDB(database_base.DBConnection):
 # self.insert_product(p['name'], p['description'], p['price'], p['sale_price'], p['on_sale'], p['category'], p['extra'], p['visible'])
 db = ProductsDB()
 
-# db.create_products_db()
+db.create_products_db()
 
 p_list = [
     {'id': 5, 'name': 'Pan con manteca', 'description': 'Rico pan untado con manteca sin sal', 'price': 20.00, 'sale_price': 15.00, 'on_sale': 0, 'category': 'comida', 'extra': '', 'visible':1},
