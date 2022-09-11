@@ -76,10 +76,10 @@ class ProductsDB(database_base.DBConnection):
 
 
 # self.insert_product(p['name'], p['description'], p['price'], p['sale_price'], p['on_sale'], p['category'], p['extra'], p['visible'])
-db = ProductsDB()
+#db = ProductsDB()
 
-db.create_products_db()
-
+#db.create_products_db()
+'''
 p_list = [
     {'id': 5, 'name': 'Pan con manteca', 'description': 'Rico pan untado con manteca sin sal', 'price': 20.00, 'sale_price': 15.00, 'on_sale': 0, 'category': 'comida', 'extra': '', 'visible':1},
     {'id': 6, 'name': 'Camello verde', 'description': 'Increible camello verde de plastico', 'price': 500.00, 'sale_price': 250.00, 'on_sale': 0, 'category': 'juguete', 'extra': '', 'visible':1},
@@ -90,8 +90,8 @@ p_list = [
     {'id': 11, 'name': 'Pan con manteca 12 ', 'description': 'Rico pan untado con manteca sin sal', 'price': 220.00, 'sale_price': 15.00, 'on_sale': 1, 'category': 'patos', 'extra': '', 'visible':1},
     {'id': 12, 'name': 'Pan con manteca 13', 'description': 'Rico pan untado con manteca sin sal', 'price': 20.00, 'sale_price': 15.00, 'on_sale': 0, 'category': 'patos', 'extra': '', 'visible':1},
 ]
-
-db.insert_products_bulk(p_list)
+'''
+#db.insert_products_bulk(p_list)
 '''
 print("--ALL--")
 print(db.get_all_products())
