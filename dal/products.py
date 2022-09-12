@@ -30,11 +30,12 @@ class ProductsDB(database_base.DBConnection):
         return products
 
     def get_product_by_id(self, product_id):
-        product = self.query(f'SELECT * FROM product WHERE id = {product_id}')
+        product = self.query(f'SELECT * FROM products WHERE id = {product_id}')
+        print(product)
         return product[0]
 
     def insert_product(self, id, name, desc, price, sale_price, on_sale, category, extra, visible):
-        sql = f"INSERT INTO {DB_NAME} (id,name, description, price, sale_price, on_sale, category, extra, visible) VALUES ({id}, '{name}', '{desc}', {price}, {sale_price}, {on_sale}, '{category}', '{extra}', {visible})"
+        sql = f"INSERT INTO {DB_NAME} (id, name, description, price, sale_price, on_sale, category, extra, visible) VALUES ({id}, '{name}', '{desc}', {price}, {sale_price}, {on_sale}, '{category}', '{extra}', {visible})"
         self.execute(sql)
 
     def insert_products_bulk(self, product_list):

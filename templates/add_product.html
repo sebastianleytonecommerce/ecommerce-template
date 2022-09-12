@@ -43,52 +43,27 @@
                 </div>
             </div>
         </nav>
-        <!-- Header-->
-        <header class="bg-dark py-5">
-            <div class="container px-4 px-lg-5 my-5">
-                <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">Shop in style</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
-                </div>
-            </div>
-        </header>
+
+
         <!-- Section-->
         {% block section %}
         <section class="py-5">
-            <div class="container px-4 px-lg-5 mt-5">
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <div class="form">
+                <ul>
+                    <form id="add_product" action="add_product_form">
+                        <li>Id Prod. </li><input id="id" name="id">
+                        <li>Nombre </li><input id="name" name="name">
+                        <li>Categoria </li><input id="category" name="category">
+                        <li>Descripcion </li><input id="description" name="description">
+                        <li>Precio </li><input id="price" name="price">
+                        <li>Precio Oferta</li><input id="sale_price" name="sale_price">
+                        <li>Oferta Activa</li><input type="checkbox" id="on_sale" name="on_sale" value="on_sale">
+                        <li>Informacion Extra</li> <input id="extra" name="extra">
+                        <li>Producto Visible?</li><input type="checkbox" id="visible" name="visible" value="visible">
+                        <li><button onclick="$('#add_product').submit()">Guardar</button></li>
+                    </form>
+                </ul>
 
-                    {% if product %}
-                        <div class="col mb-5">
-                            <div class="card h-100">
-                                <!-- Product image-->
-                                <img class="card-img-top" src="/static/images/products/{{ product['id'] }}.png" alt="{{ product['description'] }}" width="450" height="300"/>
-                                <!-- Product details-->
-                                <div class="card-body p-4">
-                                    <div class="text-center">
-                                        <!-- Product name-->
-                                        <h5 class="fw-bolder">{{ product['name'] }}</h5>
-                                        <!-- Product Description -->
-                                        <p>{{ product['description'] }}</p>
-                                        <!-- Product price-->
-                                        {% if product['on_sale'] == 1 %}
-                                            <strike>$ {{ product['price'] }}</strike> - ${{ product['sale_price'] }} <b>OFERTA</b>
-                                        {% else %}
-                                            ${{ product['price'] }}
-                                        {% endif %}
-
-
-                                    </div>
-                                </div>
-                                <!-- Product actions-->
-                                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                    <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
-                                </div>
-                            </div>
-                        </div>
-                    {% endif %}
-
-                </div>
             </div>
         </section>
         {% endblock section %}
